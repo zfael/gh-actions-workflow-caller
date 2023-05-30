@@ -1,0 +1,14 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+      - 'features/**'
+
+jobs:
+  deploy:
+    uses: "zfael/gh-actions-workflow-called/.github/workflows/proxy.yml@main"
+    with:
+      project_type: service
+    secrets: inherit
